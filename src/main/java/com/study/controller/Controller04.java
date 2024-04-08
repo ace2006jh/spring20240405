@@ -62,10 +62,13 @@ public class Controller04 {
         String value = request.getParameter("city");
 
         if (value != null) {
-            System.out.println(value + "에 관한 정보 출력");
+            System.out.println(value + "에 관한 정보 출력 ");
         }
-
     }
+
+    // /main4/sub5?age=13
+    // /main4/sub5?age=19
+    // /main4/sub5?age=35
     @RequestMapping("sub5")
     public void sub5(WebRequest request) {
         String value = request.getParameter("age");
@@ -79,15 +82,19 @@ public class Controller04 {
             System.out.println("성인 정보 검색");
         }
     }
+
+    // /main4/sub6?weight=45.5
+    // /main4/sub6?weight=80.7
+    // /main4/sub6?weight=120.3
     @RequestMapping("sub6")
     public void sub6(WebRequest request) {
-        String value = request.getParameter("weight");
-        int weight = Integer.parseInt(value);
+        // todo: 몸무게 weight 파라미터를 double로 변경
+        String parameter = request.getParameter("weight");
+        double weight = Double.parseDouble(parameter);
 
-
-        if(weight <50) {
+        if (weight < 50.0) {
             System.out.println("저체중");
-        } else if (weight < 90) {
+        } else if (weight < 90.0) {
             System.out.println("보통");
         } else {
             System.out.println("과체중");
