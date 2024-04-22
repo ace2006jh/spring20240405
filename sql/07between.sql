@@ -1,0 +1,10 @@
+USE w3schools;
+
+SELECT *
+FROM Orders
+WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+
+SELECT *
+FROM Employees
+WHERE BirthDate BETWEEN '1960-01-01' AND '1960-12-31';
+
