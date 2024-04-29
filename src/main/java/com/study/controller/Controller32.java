@@ -94,15 +94,15 @@ public class Controller32 {
     }
 
     @GetMapping("sub7")
-    public void method7(@RequestParam(value = "id", required = false) Integer eid, Model model) {
-        if (eid != null) {
-            MyBean254Customer c = mapper02.selectOneCustomer4(eid);
+    public void method8(@RequestParam(value = "id", required = false) Integer cid, Model model) {
+        if (cid != null) {
+            MyBean254Customer c = mapper02.selectOneCustomer4(cid);
             model.addAttribute("customer", c);
         }
     }
 
     @PostMapping("sub7/update")
-    public String method8(MyBean254Customer customer, RedirectAttributes rttr) {
+    public String method9(MyBean254Customer customer, RedirectAttributes rttr) {
         int i = mapper.updateCustomer(customer);
         if (i > 0) {
             rttr.addFlashAttribute("message", i + "명 고객이 수정되었습니다");
@@ -111,7 +111,7 @@ public class Controller32 {
         }
 
         rttr.addAttribute("id", customer.getId());
-        return "redirect:/main32/sub6";
+        return "redirect:/main32/sub7";
 
     }
 
